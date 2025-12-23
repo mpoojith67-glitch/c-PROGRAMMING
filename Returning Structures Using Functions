@@ -1,0 +1,25 @@
+#include <stdio.h>
+struct Rectangle {
+    float length;
+    float width;
+    float area;
+};
+struct Rectangle get_rectangle_data() {
+    struct Rectangle r;
+
+    printf("Enter Length of Rectangle: ");
+    scanf("%f", &r.length);
+    printf("Enter Width of Rectangle: ");
+    scanf("%f", &r.width);
+    r.area = r.length * r.width;
+
+    return r; 
+}
+int main() {
+    struct Rectangle r1 = get_rectangle_data();
+    printf("\n--- Rectangle Report ---\n");
+    printf("Length: %.2f\n", r1.length);
+    printf("Width: %.2f\n", r1.width);
+    printf("Calculated Area: %.2f\n", r1.area);
+    return 0;
+}
