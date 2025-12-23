@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h> 
+#include <math.h>   
+struct Circle {
+    float radius;
+    float area;
+};
+int main() {
+    struct Circle *c_ptr = (struct Circle *)malloc(sizeof(struct Circle));
+    if (c_ptr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    printf("Enter Circle Radius: ");
+    scanf("%f", &c_ptr->radius);
+    c_ptr->area = M_PI * c_ptr->radius * c_ptr->radius;
+    printf("\n--- Dynamic Circle Report ---\n");
+    printf("Radius: %.2f\n", c_ptr->radius);
+    printf("Area: %.2f\n", c_ptr->area);
+    free(c_ptr);
+    c_ptr = NULL;
+    return 0;
+}
